@@ -1,0 +1,95 @@
+body, html {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif, Arial, Dancing Script;
+}
+.navigation {
+  display: flex;
+  background-color: inherit;
+  padding: 15;
+  justify-content: flex-start;
+}
+.navigation li {
+  list-style-type: none;
+  color: white;
+  margin: 5px 5px;
+  text-transform: uppercase;
+}
+
+.navigation li a {
+  position: relative;
+  display: block;
+  margin: 0 10px;
+  padding: 5px 10px;
+  color: #aaa;
+  font-size: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation li a::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  transition: 0.5s;
+}
+.navigation li a:hover {
+  color: #fff;
+}
+.navigation li a:hover::before {
+  animation: animate .5s linear forwards; 
+}
+
+@keyframes animate {
+  0% {
+    top: calc(50% - 2px);
+    left: -100%;
+    height: 4px;
+    z-index: 1;
+  }
+  50% {
+    top: calc(50% - 2px);
+    left: 0;
+    height: 4px;
+    z-index: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+  }
+}
+.container {
+  background-image: url("https://cdn.photosight.ru/img/5/33c/5645988_xlarge.jpg");
+  height: 1050px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.users-table {
+background-color: grey;
+}
+.btn-danger {
+  background-color: #aaa;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn-danger:hover {
+  opacity: 1;
+}
+
+
+th, td {
+  padding: 10px;
+}
